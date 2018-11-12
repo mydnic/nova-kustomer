@@ -27,7 +27,7 @@ public function tools()
 {
     return [
         // ...
-        new Mydnic\NovaKustomer\NovaKustomer,
+        new \Mydnic\NovaKustomer\NovaKustomer,
     ];
 }
 ```
