@@ -1,9 +1,12 @@
 {
     "name": "mydnic/nova-kustomer",
-    "description": "A Laravel Nova tool.",
+    "description": "Laravel Nova Kustomer Feedback Tool",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "kustomer",
+        "feedback",
+        "mydnic"
     ],
     "license": "MIT",
     "require": {
