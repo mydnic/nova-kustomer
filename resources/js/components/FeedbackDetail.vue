@@ -27,7 +27,18 @@
             <detail-text-field :field="{name: 'Url', value: feedback.user_info.url}"></detail-text-field>
             <detail-text-field :field="{name: 'User Agent', value: feedback.user_info.agent}"></detail-text-field>
             <detail-text-field :field="{name: 'Language', value: feedback.user_info.language}"></detail-text-field>
-            <detail-text-field :field="{name: 'Viewport size', value: viewport}"></detail-text-field>
+            <detail-text-field v-if="feedback.viewport" :field="{name: 'Viewport size', value: viewport}"></detail-text-field>
+            <detail-file-field v-if="feedback.screenshot" :field="{
+                name: 'Screenshot',
+                value: feedback.screenshot,
+                thumbnailUrl: feedback.screenshot,
+                attribute: 'screenshot'
+            }"></detail-file-field>
+            <detail-text-field v-if="feedback.screenshot" :field="{
+                name: 'Open Screenshot',
+                value: htmlLink,
+                asHtml: true,
+            }"></detail-text-field>
         </card>
     </div>
 </template>
@@ -68,6 +79,9 @@ export default {
             return this.feedback.user_info.viewport.width
             + 'x'
             + this.feedback.user_info.viewport.height
+        },
+        htmlLink() {
+            return '<a target="_blank" href="' + this.feedback.screenshot + '">Link</a>';
         }
     },
 
