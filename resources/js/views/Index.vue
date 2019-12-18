@@ -9,7 +9,7 @@
 <script>
 export default {
     components: {
-        'feedbacks-table': require('./../components/FeedbacksTable.vue')
+        'feedbacks-table': require('./../components/FeedbacksTable.vue').default
     }
 }
 </script>

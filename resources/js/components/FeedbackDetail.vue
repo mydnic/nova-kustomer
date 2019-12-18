@@ -24,9 +24,11 @@
         </loading-card>
         <heading class="mb-6">User Request</heading>
         <card class="card relative mb-6 py-3 px-6" v-if="!initialLoading">
+            <detail-text-field :field="{name: 'Created At', value: feedback.created_at}"></detail-text-field>
             <detail-text-field :field="{name: 'Url', value: feedback.user_info.url}"></detail-text-field>
             <detail-text-field :field="{name: 'User Agent', value: feedback.user_info.agent}"></detail-text-field>
             <detail-text-field :field="{name: 'Language', value: feedback.user_info.language}"></detail-text-field>
+            <detail-text-field :field="{name: 'User ID', value: feedback.user_info.user_id}"></detail-text-field>
             <detail-text-field v-if="feedback.viewport" :field="{name: 'Viewport size', value: viewport}"></detail-text-field>
             <detail-file-field v-if="feedback.screenshot" :field="{
                 name: 'Screenshot',

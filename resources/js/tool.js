@@ -3,12 +3,12 @@ Nova.booting((Vue, router) => {
         {
             name: 'nova-kustomer',
             path: '/feedbacks',
-            component: require('./views/Index'),
+            component: require('./views/Index').default,
         },
         {
             name: 'feedback-detail',
             path: '/feedback/:feedbackId',
-            component: require('./views/Detail'),
+            component: require('./views/Detail').default,
             props: true,
         },
     ])
